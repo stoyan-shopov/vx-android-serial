@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
             Log.e("shopov", "shopov communicating with the vx");
 
 // Read some data! Most have just one port (port 0).
-            synchronized (port) {
+            //synchronized (port)
+            {
                 try {
                     int i = 0;
 
@@ -122,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleSend(View view) {
-        synchronized (port) {
+        //synchronized (port)
+        {
             try {
                 port.write(new String(((EditText) findViewById(R.id.editTextVxDataToSend)).getText().toString()).getBytes(), 2000);
                 ((EditText) findViewById(R.id.editTextVxDataToSend)).getText().clear();
