@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         //synchronized (port)
         {
             try {
-                port.write(new String(((EditText) findViewById(R.id.editTextVxDataToSend)).getText().toString()).getBytes(), 2000);
+                port.write(new String(((EditText) findViewById(R.id.editTextVxDataToSend)).getText().toString() + "\n").getBytes(), 2000);
                 ((EditText) findViewById(R.id.editTextVxDataToSend)).getText().clear();
             } catch (Exception e) {
                 Log.e("shopov", "shopov exception");
